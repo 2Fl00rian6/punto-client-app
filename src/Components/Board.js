@@ -142,7 +142,7 @@ const Board = () => {
     return (
         <Box>
             <Typography variant="h5">
-                {winner ? `Gagnat: ${winner}` : `Au tour de ${players[currentPlayerIndex].name}`}
+                {winner ? `Gagnant : ${winner}` : `Au tour de ${players[currentPlayerIndex].name}`}
             </Typography>
 
             <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center" style={{ marginTop: "20px" }}>
