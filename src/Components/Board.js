@@ -22,9 +22,9 @@ const Board = () => {
     const [selectedCardIndex, setSelectedCardIndex] = useState(null);
     const [winner, setWinner] = useState(null);
     const [players, setPlayers] = useState([
-        { name: "Player 1", color: "red", deck: generateDeck(), hand: [] },
-        { name: "Player 2", color: "blue", deck: generateDeck(), hand: [] },
-        { name: "Player 3", color: "green", deck: generateDeck(), hand: [] },
+        { name: "Joueur 1", color: "red", deck: generateDeck(), hand: [] },
+        { name: "Joueur 2", color: "blue", deck: generateDeck(), hand: [] },
+        { name: "Joueur 3", color: "green", deck: generateDeck(), hand: [] },
     ]);
 
     players.forEach(player => {
@@ -142,7 +142,7 @@ const Board = () => {
     return (
         <Box>
             <Typography variant="h5">
-                {winner ? `Winner: ${winner}` : `${players[currentPlayerIndex].name}'s turn`}
+                {winner ? `Gagnat: ${winner}` : `Au tour de ${players[currentPlayerIndex].name}`}
             </Typography>
 
             <Grid container spacing={{ xs: 2, md: 3 }} justifyContent="center" style={{ marginTop: "20px" }}>
@@ -169,13 +169,13 @@ const Board = () => {
                     setCurrentPlayerIndex(0);
                 }}
             >
-                Reset Game
+                Réinitialiser le jeu
             </Button>
 
             <Box mt={4} sx={{ position: 'absolute', right: '150px', top: '30%' }}>
                 {players.map((player, idx) => (
                     <Box key={idx} mt={2}>
-                        <Typography>{player.name}'s hand:</Typography>
+                        <Typography>Cartes de {player.name}:</Typography>
                         <Grid container spacing={2} justifyContent="center">
                             {player.hand.map((card, cardIdx) => (
                                 <Grid xs={3} key={cardIdx}>
